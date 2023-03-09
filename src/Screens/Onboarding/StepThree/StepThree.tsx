@@ -7,10 +7,10 @@ import BottomProgress from '../../../Components/Onboarding/BottomProgress';
 
 const StepOne = ({navigation}) => {
   const handleScreenMovement = () => {
-    navigation.navigate('SignUpScreen');
+    navigation.navigate('AccountInformationScreen');
   };
   const handleSkipMovement = () => {
-    navigation.navigate('SignUpScreen');
+    navigation.navigate('AccountInformationScreen');
   };
 
   return (
