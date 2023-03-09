@@ -7,7 +7,10 @@ import BottomProgress from '../../../Components/Onboarding/BottomProgress';
 
 const StepOne = ({navigation}) => {
   const handleScreenMovement = () => {
-    navigation.navigate('StepThreeScreen');
+    navigation.navigate('SignUpScreen');
+  };
+  const handleSkipMovement = () => {
+    navigation.navigate('SignUpScreen');
   };
 
   return (
@@ -20,7 +23,10 @@ const StepOne = ({navigation}) => {
           }
           img={require('../../../Assets/Onboarding/img3.png')}
         />
-        <BottomProgress onPress={handleScreenMovement} />
+        <BottomProgress
+          nextOnPress={handleScreenMovement}
+          skipOnPress={handleSkipMovement}
+        />
       </View>
     </SafeAreaView>
   );

@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import StepOne from './Screens/Onboarding/StepOne';
 import StepTwo from './Screens/Onboarding/StepTwo';
 import StepThree from './Screens/Onboarding/StepThree';
+import AccountInformation from './Screens/SignUp/AccountInformation';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,25 +13,32 @@ const Router = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          options={{
-            headerShown: false,
-          }}
           name="StepOneScreen"
           component={StepOne}
-        />
-        <Stack.Screen
           options={{
             headerShown: false,
           }}
+        />
+        <Stack.Screen
           name="StepTwoScreen"
           component={StepTwo}
-        />
-        <Stack.Screen
           options={{
             headerShown: false,
           }}
+        />
+        <Stack.Screen
           name="StepThreeScreen"
           component={StepThree}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="SignUpScreen"
+          component={AccountInformation}
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

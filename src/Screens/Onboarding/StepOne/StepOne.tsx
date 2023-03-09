@@ -10,7 +10,7 @@ const StepOne = ({navigation}) => {
     navigation.navigate('StepTwoScreen');
   };
   const handleSkipMovement = () => {
-    navigation.navigate('StepThreeScreen');
+    navigation.navigate('SignUpScreen');
   };
 
   return (
