@@ -23,7 +23,7 @@ const Router = () => {
   return (
     <NavigationContainer>
       <StatusBar barStyle="light-content" backgroundColor="#fff" />
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{animation: 'fade'}}>
         <Stack.Screen
           name="StepOneScreen"
           component={StepOne}

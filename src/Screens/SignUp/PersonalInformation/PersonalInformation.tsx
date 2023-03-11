@@ -1,5 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
+import auth from '@react-native-firebase/auth';
 
 import styles from './PersonalInformation.style';
 import ReturnPage from '../../../Components/ReturnPage';
@@ -9,6 +10,25 @@ import DarkButton from '../../../Components/DarkButton';
 
 const PersonalInformation = ({navigation}) => {
   const handleScreenMovement = () => {
+    auth()
+      .createUserWithEmailAndPassword(
+        'jane.doe@example.com',
+        'SuperSecretPassword!',
+      )
+      .then(() => {
+        console.log('User account created & signed in!');
+      })
+      .catch(error => {
+        if (error.code === 'auth/email-already-in-use') {
+          console.log('That email address is already in use!');
+        }
+
+        if (error.code === 'auth/invalid-email') {
+          console.log('That email address is invalid!');
+        }
+
+        console.error(error);
+      });
     navigation.navigate('SignUpSuccessScreen');
   };
 
